@@ -1,0 +1,16 @@
+body{
+  position: absolute;
+  margin:0;
+  background:#eee;
+  background:linear-gradient(to bottom, #eee, #ddd);
+  left: 0;top: 0;bottom: 0;right: 0;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+.ngame {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
