@@ -1,7 +1,7 @@
 var cellStack = [0];
 var cols = 35 
 var rows = 17;
-var cellWidth = 40;
+var cellWidth = 30;
 var cells = []; 
 var currentCell = 0;
 var wallWidth = 4;
@@ -23,14 +23,14 @@ var mg;
 var pg; 
 
 
-function randomizeColors() {
-  var hue = random(360);
+// function randomizeColors() {
+//   var hue = random(360);
   
-  BG_COLOR = color(hue,50,100);
-  TRACK_COLOR = color(hue,80,90);
-  WALL_COLOR = color(hue,100,30);
+//   BG_COLOR = color(hue,50,100);
+//   TRACK_COLOR = color(hue,80,90);
+//   WALL_COLOR = color(hue,100,30);
   
-}
+// }
 
 function setup() {
   
@@ -38,7 +38,7 @@ function setup() {
   var w = cols * cellWidth;
   var h = rows * cellWidth; 
   
-  randomizeColors();
+  //randomizeColors();
   TARGET_COLOR = color(0,100,100);
   
   createCanvas(w,h);
@@ -142,7 +142,9 @@ function generateMaze() {
   playerPos = 0;
   triggeredBefore = null;
   posHistory = [0];
-  randomizeColors();
+
+  //randomizeColors();
+  
   mg.clear();
   cells = []; 
   currentCell = 0;
