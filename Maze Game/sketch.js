@@ -1,6 +1,6 @@
 var cellStack = [0];
-var cols = 35 
-var rows = 17;
+var cols = 30 
+var rows = 25;
 var cellWidth = 30;
 var cells = []; 
 var currentCell = 0;
@@ -14,9 +14,9 @@ var KEY_A = 65;
 var KEY_W = 87;
 var KEY_S = 83;
 
-var BG_COLOR = 255;
+var BG_COLOR = 200;
 var WALL_COLOR = 0;
-var TRACK_COLOR = 200;
+var TRACK_COLOR = 150;
 var TARGET_COLOR = 0;
 
 var mg;
@@ -33,6 +33,11 @@ var pg;
 // }
 
 function setup() {
+// dynamic fullscreen setup
+
+  // createCanvas(window.innerWidth,window.innerHeight);
+  // cols=Math.floor(width / cellWidth);
+  // rows=Math.floor(height / cellWidth);
   
   colorMode(HSB);
   var w = cols * cellWidth;
@@ -46,7 +51,7 @@ function setup() {
   mg = createGraphics(w,h);
   pg = createGraphics(w,h);
   
-  wallWidth = cellWidth / 8;
+  wallWidth = cellWidth / 6;
   
   generateMaze();
   updatePlayerGraphics();
@@ -122,8 +127,8 @@ function updatePlayerGraphics() {
   }
   pg.strokeWeight(2);
   pg.fill(0,255,0);
-  pg.stroke(10,60,10);
-  pg.ellipse(drawX,drawY, cellWidth/2);
+  pg.stroke(0,50,0);
+  pg.ellipse(drawX,drawY,cellWidth/2);
  
 }
 

@@ -1,8 +1,7 @@
 body{
   position: absolute;
   margin:0;
-  background:#eee;
-  background:linear-gradient(to bottom, #eee, #ddd);
+  background-image: url(https://cdn.hipwallpaper.com/i/51/78/HuY2xk.png);
   left: 0;top: 0;bottom: 0;right: 0;
   text-align: center;
 }
@@ -14,3 +13,4 @@ canvas {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
