@@ -1,6 +1,6 @@
 var cellStack = [0];
-var cols = 30 
-var rows = 25;
+var cols = 10;
+var rows = 10;
 var cellWidth = 30;
 var cells = []; 
 var currentCell = 0;
@@ -16,7 +16,7 @@ var KEY_S = 83;
 
 var BG_COLOR = 200;
 var WALL_COLOR = 0;
-var TRACK_COLOR = 150;
+var TRACK_COLOR = 200;
 var TARGET_COLOR = 0;
 
 var mg;
@@ -33,12 +33,6 @@ var pg;
 // }
 
 function setup() {
-// dynamic fullscreen setup
-
-  // createCanvas(window.innerWidth,window.innerHeight);
-  // cols=Math.floor(width / cellWidth);
-  // rows=Math.floor(height / cellWidth);
-  
   colorMode(HSB);
   var w = cols * cellWidth;
   var h = rows * cellWidth; 
@@ -51,16 +45,30 @@ function setup() {
   mg = createGraphics(w,h);
   pg = createGraphics(w,h);
   
-  wallWidth = cellWidth / 6;
+  wallWidth = cellWidth / 8;
   
   generateMaze();
   updatePlayerGraphics();
-  
+}
+
+function easyLevel() {
+  cols = 10;
+  rows = 10;
+}
+
+function mediumLevel() {
+  cols = 20;
+  rows = 20;
+}
+
+function hardLevel() {
+  cols = 30;
+  rows = 30;
 }
 
 function draw() {
   image(mg, 0,0);
-  image(pg, 0,0);
+  image(pg, -8,-8);
   
   if (keyIsPressed) {
     updatePlayerGraphics();
@@ -114,7 +122,7 @@ function updatePlayerGraphics() {
   pg.clear(); 
 
   for (var i = 0; i < posHistory.length - 1; i++) {
-    pg.strokeWeight(cellWidth /3);
+    pg.strokeWeight(cellWidth /4);
     pg.stroke(TRACK_COLOR);
 
     var i1 = posHistory[i];
@@ -128,7 +136,7 @@ function updatePlayerGraphics() {
   pg.strokeWeight(2);
   pg.fill(0,255,0);
   pg.stroke(0,50,0);
-  pg.ellipse(drawX,drawY,cellWidth/2);
+  pg.rect(drawX,drawY,cellWidth/2);
  
 }
 
@@ -196,6 +204,7 @@ function generateMazeStep() {
   } 
   return nextCell; 
 }
+
 function selectUnvisitedNeighbor(ci) {
   var neighbors = []; 
   var x = getX(ci);
