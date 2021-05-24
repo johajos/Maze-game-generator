@@ -81,7 +81,7 @@ function Cell(i, j) {
     var bottom  = grid[index(i, j + 1)];
     var left    = grid[index(i - 1, j)];
 
-    //if neighbor exists and has not been visited, add it to that array
+    //if neighbor exists and has not been visited, add it to the array
     if (top && !top.visited) {
       neighbors.push(top);
     }

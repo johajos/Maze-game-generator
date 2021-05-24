@@ -1,7 +1,8 @@
 body{
   position: absolute;
   margin:0;
-  background-image: url(https://cdn.hipwallpaper.com/i/51/78/HuY2xk.png);
+  background-image: url(https://cdn.wallpapersafari.com/31/40/7PD9tI.png);
+  background-size: 100%;
   left: 0;top: 0;bottom: 0;right: 0;
   text-align: center;
 }
@@ -9,7 +10,8 @@ canvas {
   display: block;
   margin: 0 auto;
 }
-.ngame {
+button {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+

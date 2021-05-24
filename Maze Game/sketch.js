@@ -22,6 +22,9 @@ var TARGET_COLOR = 0;
 var mg;
 var pg; 
 
+var image = document.createElement('img');
+image.src = '/Maze Game/assets/stair.png';
+
 
 // function randomizeColors() {
 //   var hue = random(360);
@@ -54,16 +57,61 @@ function setup() {
 function easyLevel() {
   cols = 10;
   rows = 10;
+
+  colorMode(HSB);
+  let w = cols * cellWidth;
+  let h = rows * cellWidth; 
+  
+  //randomizeColors();
+  TARGET_COLOR = color(0,100,100);
+  
+  createCanvas(w,h);
+  pixelDensity(1);
+  mg = createGraphics(w,h);
+  pg = createGraphics(w,h);
+  
+  generateMaze();
+  updatePlayerGraphics();
 }
 
 function mediumLevel() {
   cols = 20;
   rows = 20;
+
+  colorMode(HSB);
+  let w = cols * cellWidth;
+  let h = rows * cellWidth; 
+  
+  //randomizeColors();
+  TARGET_COLOR = color(0,100,100);
+  
+  createCanvas(w,h);
+  pixelDensity(1);
+  mg = createGraphics(w,h);
+  pg = createGraphics(w,h);
+  
+  generateMaze();
+  updatePlayerGraphics();
 }
 
 function hardLevel() {
   cols = 30;
   rows = 30;
+
+  colorMode(HSB);
+  let w = cols * cellWidth;
+  let h = rows * cellWidth; 
+  
+  //randomizeColors();
+  TARGET_COLOR = color(0,100,100);
+  
+  createCanvas(w,h);
+  pixelDensity(1);
+  mg = createGraphics(w,h);
+  pg = createGraphics(w,h);
+  
+  generateMaze();
+  updatePlayerGraphics();
 }
 
 function draw() {
