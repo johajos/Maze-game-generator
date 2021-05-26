@@ -1,5 +1,5 @@
 var cellStack = [0];
-var cols = 10;
+var cols = 18;
 var rows = 10;
 var cellWidth = 30;
 var cells = []; 
@@ -42,7 +42,7 @@ function setup() {
 }
 
 function easyLevel() {
-  cols = 10;
+  cols = 18;
   rows = 10;
 
   colorMode(HSB);
@@ -61,8 +61,8 @@ function easyLevel() {
 }
 
 function mediumLevel() {
-  cols = 20;
-  rows = 20;
+  cols = 30;
+  rows = 15;
 
   colorMode(HSB);
   let w = cols * cellWidth;
@@ -80,8 +80,8 @@ function mediumLevel() {
 }
 
 function hardLevel() {
-  cols = 30;
-  rows = 30;
+  cols = 40;
+  rows = 25;
 
   colorMode(HSB);
   let w = cols * cellWidth;
@@ -140,11 +140,10 @@ function updatePlayerGraphics() {
     posHistory.push(newPos);
     
      if (cells[playerPos].type == "end") {
-       setTimeout(function() {
-          
-          generateMaze();       
-       },300);
-
+      setTimeout(function() {
+         
+        winGame();
+      },300);
     }
   }
 
@@ -170,6 +169,12 @@ function updatePlayerGraphics() {
   pg.stroke(0,50,0);
   pg.rect(drawX,drawY,cellWidth/2);
  
+}
+
+function winGame() {
+  if (cells[playerPos].type == "end") {
+    alert("You won!");
+  }
 }
 
 function getIndex(x,y) {
@@ -332,3 +337,4 @@ Cell.prototype.removeWallBetween = function(other) {
     other.walls[0] = false;
   }
 }
+

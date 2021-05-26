@@ -12,7 +12,7 @@ function setup() {
   cols = floor(width/w);
   rows = floor(height/w);
 
-  frameRate(20);
+  frameRate(30);
 
   //Nested loop
   for (var j = 0; j < rows; j++) {
