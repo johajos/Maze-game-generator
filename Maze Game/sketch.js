@@ -143,6 +143,7 @@ function updatePlayerGraphics() {
       setTimeout(function() {
          
         winGame();
+        generateMaze();
       },300);
     }
   }
