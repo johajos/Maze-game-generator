@@ -1,5 +1,5 @@
 var cols, rows;
-var w = 40;
+var w = 50;
 var grid = [];
 //current cell
 var current;
@@ -12,13 +12,14 @@ function setup() {
   cols = floor(width/w);
   rows = floor(height/w);
 
-  frameRate(15);
+  frameRate(10);
 
   //Nested loop
+  //Create cell objects and put them in array
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols; i++) {
       var cell = new Cell(i, j);
-      //Create cell objects and put them in array
+
       grid.push(cell);
     }
 
@@ -95,6 +96,7 @@ function Cell(i, j) {
       neighbors.push(left);
     }
 
+    //go through cells randomly until array is empty
     if (neighbors.length > 0) {
       var r = floor(random(0, neighbors.length));
       return neighbors[r];
