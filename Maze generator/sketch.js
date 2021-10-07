@@ -12,7 +12,7 @@ function setup() {
   cols = floor(width/w);
   rows = floor(height/w);
 
-  frameRate(10);
+  frameRate(15);
 
   //Nested loop
   //Create cell objects and put them in array
