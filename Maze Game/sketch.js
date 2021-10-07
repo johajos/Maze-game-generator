@@ -1,6 +1,6 @@
 var cellStack = [0];
-var cols = 18;
-var rows = 10;
+var cols = 12;
+var rows = 12;
 var cellWidth = 30;
 var cells = []; 
 var currentCell = 0;
@@ -42,8 +42,8 @@ function setup() {
 }
 
 function easyLevel() {
-  cols = 18;
-  rows = 10;
+  cols = 12;
+  rows = 12;
 
   colorMode(HSB);
   let w = cols * cellWidth;
@@ -61,8 +61,8 @@ function easyLevel() {
 }
 
 function mediumLevel() {
-  cols = 30;
-  rows = 15;
+  cols = 20;
+  rows = 20;
 
   colorMode(HSB);
   let w = cols * cellWidth;
@@ -80,8 +80,8 @@ function mediumLevel() {
 }
 
 function hardLevel() {
-  cols = 40;
-  rows = 25;
+  cols = 28;
+  rows = 28;
 
   colorMode(HSB);
   let w = cols * cellWidth;
@@ -294,20 +294,21 @@ Cell.prototype.draw = function() {
   mg.stroke(WALL_COLOR);  
   mg.strokeWeight(wallWidth);
   
+  //draw maze walls
   if (this.walls[0]) {
-    // top
+    //top wall
     mg.line(x1,y1,x2,y1);
   }
   if (this.walls[1]) {
-    // right    
+    //right wall
     mg.line(x2,y1,x2,y2);
   }
   if (this.walls[2]) {
-    //bottom
+    //bottom wall
     mg.line(x1,y2,x2,y2);
   }
   if (this.walls[3]) {
-    //left
+    //left wall
     mg.line(x1,y1,x1,y2);
   }
   
