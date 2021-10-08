@@ -1,5 +1,5 @@
 var cols, rows;
-var w = 50;
+var w = 80;
 var grid = [];
 //current cell
 var current;
@@ -12,7 +12,7 @@ function setup() {
   cols = floor(width/w);
   rows = floor(height/w);
 
-  frameRate(15);
+  frameRate(5);
 
   //Nested loop
   //Create cell objects and put them in array
@@ -107,7 +107,7 @@ function Cell(i, j) {
     
 
   }
-
+  //highlight generation process
   this.highlight = function() {
     var x = this.i*w;
     var y = this.j*w;
